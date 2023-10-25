@@ -1,9 +1,9 @@
-map $cookie_SESSIONID $route_cookie {  
-    ~.+\.(?P<route>\w+)$ $route; 
+map $cookie_SESSIONID $route_cookie {
+    ~.+\.(?P<route>\w+)$ $route;
 }
 
-map $request_uri $route_uri {   
-    ~SESSIONID=.+\.(?P<route>\w+)$ $route; 
+map $request_uri $route_uri {
+    ~SESSIONID=.+\.(?P<route>\w+)$ $route;
 }
 
 #log_format sticky "\nRequest: $request \nStatus: $status \nClient: $remote_addr \nUpstream IP: $upstream_addr \nCookie_SESSIONID: $cookie_SESSIONID \nRequest_URI: $request_uri \nRoute_URI: $route_uri \nRoute_Cookie: $route_cookie \nRoute: $route";
